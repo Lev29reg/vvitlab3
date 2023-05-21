@@ -1,0 +1,25 @@
+CREATE DATABASE mtuci_db;
+CREATE TABLE student_group (id SERIAL PRIMARY KEY, numb varchar NOT NULL, chair varchar NOT NULL);
+INSERT INTO student_group (numb, chair) VALUES ('БВТ2001', 'МКиИТ');
+CREATE TABLE student (id SERIAL PRIMARY KEY, full_name varchar NOT NULL, passport varchar(10) NOT NULL, group_numb varchar REFERENCES student_group(numb));
+insert into student values 
+(1, 'Лев', '12345678', 1),
+(2, 'Андрей','12345677', 1),
+(3, 'Дмитрий','12345676', 1),
+(4, 'Владимир','12345675', 1),
+(5, 'Маргарита','12345674', 1),
+(6, 'Оля','12345673', 2),
+(7, 'Яна','12345672', 2),
+(8, 'Олег','12345671', 2),
+(9, 'Катя','12345670', 2),
+(10, 'Света','12345612', 2),
+(11, 'Маша','12345679', 3),
+(12, 'Влад','12345613', 3),
+(13, 'Тимур','12345614', 3),
+(14, 'Антон','12345611', 3),
+(15, 'Александр','12345615', 3),
+(16, 'Заур','12345616', 4),
+(17, 'Елена','12345617', 4),
+(18, 'Михаил','12345635', 4),
+(19, 'Сергей','12345646', 4),
+(20, 'Алиина','12345687', 4)
